@@ -5,8 +5,11 @@ const Home = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text>Welcome to Home screen</Text>
-            <Button title="Go to About Screen"
+            <Button style={styles.btn}
+                title="Go to About Screen"
                 onPress={() => navigation.navigate("About")} />
+            <Button title="Go to Contact Page"
+                onPress={() => navigation.navigate("Contact")} />
         </View>
     );
 };
@@ -17,6 +20,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffff",
         alignItems: "center",
         justifyContent: "center",
+    },
+    btn: {
+        marginBottom: 50,
     },
 });
 

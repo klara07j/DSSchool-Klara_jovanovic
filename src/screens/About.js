@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, Button} from "react-native";
+import {View, Text, StyleSheet, Button, Flatlist} from "react-native";
 
 const About = ({navigation}) => {
     return (
