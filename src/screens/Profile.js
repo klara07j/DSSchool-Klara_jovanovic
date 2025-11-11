@@ -1,10 +1,10 @@
 import React from "react";
 import {View, Text, StyleSheet, Button} from "react-native";
 
-const Contact = ({navigation}) => {
+const Profile = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.txt}>Contact Page</Text>
+            <Text style={styles.txt}>Profile Page</Text>
         </View>
     );
 };
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     },
     txt: {
         fontSize: 20,
-    },
+    }
 });
 
-export default Contact;
+export default Profile;
