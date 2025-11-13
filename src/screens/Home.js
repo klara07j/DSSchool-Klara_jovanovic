@@ -8,6 +8,10 @@ const Home = ({navigation}) => {
             <Button style={styles.kk}
                 title="Go to About Screen"
                 onPress={() => navigation.navigate("About")} />
+            <Text>Drawer Navigation Button Functionality</Text>
+            <Button style={styles.kk}
+                title="Open Drawer"
+                onPress={() => navigation.openDrawer()} />
         </View>
     );
 };
