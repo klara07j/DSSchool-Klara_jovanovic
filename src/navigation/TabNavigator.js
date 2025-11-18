@@ -11,7 +11,7 @@ const BottomTabNavigator = () => {
                 tabBarActiveTintColor: "#400dc0ff",
                 tabBarInactiveTintColor: "lightgray",
                 tabBarStyle: {
-                    backgroundColor: "#c917aeff",
+                    backgroundColor: "#384053",
                 },
                 tabBarLabelStyle: {
                     fontSize: 12,

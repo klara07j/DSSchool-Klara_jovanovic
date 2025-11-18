@@ -1,17 +1,39 @@
 import React from "react";
-import {View, Text, StyleSheet, Button} from "react-native";
+import {View, Text, StyleSheet, Button, Image} from "react-native";
+import Swiper from "react-native-swiper";
 
 const Home = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Text>Welcome to Home screen</Text>
-            <Button style={styles.kk}
-                title="Go to About Screen"
-                onPress={() => navigation.navigate("About")} />
-            <Text>Drawer Navigation Button Functionality</Text>
-            <Button style={styles.kk}
-                title="Open Drawer"
-                onPress={() => navigation.openDrawer()} />
+            <View style={styles.sliderContainer}>
+                <Swiper
+                    autoplay={true}
+                    activeDotColor="#22D4FF"
+                    autoplayTimeout={5}
+                >
+                    <View style={styles.item}>
+                        <Image
+                            style={styles.imgItem} 
+                            source={require('../../assets/baner1.webp')} 
+                            resizeMode="cover"
+                        />
+                    </View>
+                    <View style={styles.item}>
+                        <Image
+                            style={styles.imgItem} 
+                            source={require('../../assets/baner2.webp')} 
+                            resizeMode="cover"
+                        />
+                    </View>
+                    <View style={styles.item}>
+                        <Image
+                            style={styles.imgItem} 
+                            source={require('../../assets/baner3.webp')} 
+                            resizeMode="cover"
+                        />
+                    </View>
+                </Swiper>
+            </View>
         </View>
     );
 };
@@ -23,8 +45,25 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    kk: {
+    /*kk: {
         marginBottom: 50,
+    },*/
+    sliderContainer: {
+        width: "90%",
+        height: 200,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 10,
+        borderRadius: 8,
+    },
+    imgItem: {
+        width: '100%',
+        height: "100%",
+        borderRadius: 8,
+    },
+    item: {
+        flex: 1,
+        justifyContent: "center",
     },
 });
 
