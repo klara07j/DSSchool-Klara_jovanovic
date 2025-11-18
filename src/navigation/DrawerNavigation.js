@@ -1,3 +1,4 @@
+import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { AboutStackNavigator, ContactStackNavigator, ProfileStackNavigator } from "./StackNavigator";
 import BottomTabNavigator from "./TabNavigator";
@@ -7,7 +8,7 @@ import { FlatList,View,Text,TouchableOpacity } from "react-native-gesture-handle
 
 const Drawer = createDrawerNavigator();
 
-{/*const DrawerNavigator = () => {
+const DrawerNavigator = () => {
     return(
         <Drawer.Navigator screenOptions={{
             drawerActiveBackgroundColor: "#3e0656ff",
@@ -60,42 +61,8 @@ const Drawer = createDrawerNavigator();
             />
         </Drawer.Navigator>
     );
-};*/}
+};
 
-class DrawerNavigator extends React.Component {
-    constructor(props) {
-        super();
-        this.state = {
-            screens: [],
-        };
-    }
 
-    componentDidMount() {
-        this.setState({
-            screens: list,
-        });
-    }
-
-    render() {
-        const {screens} = this.state;
-        return(
-            <View>
-                <FlatList
-                  
-                />
-            </View>
-        );
-    }
-}
-<Drawer.screen name={screen.name} component={screen.component}  options={{
-                    drawerIcon: () => (
-                        <MaterialCommunityIcons 
-                            name={screen.name} 
-                            size={22}
-                            color={"pink"}
-                        />                
-                    ),
-                }}
- />
 
 export default DrawerNavigator;
