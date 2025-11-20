@@ -1,8 +1,19 @@
 import React from "react";
 import {View, Text, StyleSheet, Button, Image} from "react-native";
 import Swiper from "react-native-swiper";
+import Icon from "../components/Icon";
 
 const Home = ({navigation}) => {
+
+    const icons = [
+        {name: "cellphone", iconText: "Iphone", color: "#f0a255ff", size: 27},
+        {name: "android", iconText: "Samsung", color: "#efe81fff", size: 24},
+        {name: "laptop", iconText: "Laptop", color: "#6daedfff", size: 24},
+        {name: "tablet", iconText: "Tablet", color:"#c954eaff", size: 27},
+        {name: "mouse", iconText:"Mouse", color:"#e06380ff", size: 29},
+        {name: "keyboard-outline", iconText: "Keyboard", color: "#ac9de9ff", size: 27},
+    ]; 
+
     return (
         <View style={styles.container}>
             <View style={styles.sliderContainer}>
@@ -33,8 +44,21 @@ const Home = ({navigation}) => {
                         />
                     </View>
                 </Swiper>
-            
-                <Swiper style={styles.swiper}
+                <View style={styles.iconWrapper}>
+                    <View style={styles.grid}>
+                        {icons.map((item, index) => (
+                            <Icon
+                                key={index}
+                                name={item.name}
+                                iconText={item.text}
+                                color={item.color}
+                                size={item.size}
+                            />
+                        ))}
+                    </View>
+                </View>
+            </View>
+                {/*<Swiper style={styles.swiper}
                     autoplay={true}
                     activeDotColor="#16d443ff"
                     autoplayTimeout={3}
@@ -50,13 +74,43 @@ const Home = ({navigation}) => {
                     </View>
                 </Swiper>
             </View>
+            <View style={styles.iconsContainer}>
+                <Icon name="cellphone" iconText="Iphone" color="#f0a255ff" size={27}></Icon>
+                <Icon name="android" iconText="Samsung" color="#efe81fff" size={24}></Icon>
+                <Icon name="laptop" iconText="Laptop" color="#6daedfff" size={24}></Icon>
+            </View>
+            <View style={styles.iconsContainer}>
+                <Icon name="tablet" iconText="Tablet" color="#c954eaff" size={27}></Icon>
+                <Icon name="mouse" iconText="Mouse" color="#e06380ff" size={29}></Icon>
+                <Icon name="keyboard-outline" iconText="Keyboard" color="#ac9de9ff" size={27}></Icon>
+            </View>*/}
         </View>
     );
 };
 
 const styles = StyleSheet.create({
+    iconWrapper: {
+        flex: 1,
+        backgroundColor: "#fff",
+    },
+    grid: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: 'space-beetwen',
+        width: "90%",
+        alignSelf: 'center',
+        marginTop: 20,
+    },
+    iconsContainer: {
+        width: '90%',
+        alignSelf: "center",
+        marginTop: 30,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
     container: {
         flex: 1,
+        width: "100%",
         backgroundColor: "#ffff",
         alignItems: "center",
         justifyContent: "center",
@@ -65,8 +119,7 @@ const styles = StyleSheet.create({
         marginBottom: 50,
     },*/
     sliderContainer: {
-        width: "90%",
-        height: 400,
+        height: 280,
         justifyContent: "center",
         alignItems: "center",
         marginTop: 10,
