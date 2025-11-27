@@ -1,92 +1,89 @@
 import React from "react";
-import {View, Text, StyleSheet, Button, Image} from "react-native";
+import {View, Text, StyleSheet, Button, Image, FlatList, TouchableOpacity, ScrollView} from "react-native";
 import Swiper from "react-native-swiper";
 import Icon from "../components/Icon";
+import data from '../../data/products.json';
+import Item from '../components/Item';
 
-const Home = ({navigation}) => {
+class Home extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            products: [],
+        };
+    }
 
-    const icons = [
-        {name: "cellphone", iconText: "Iphone", color: "#f0a255ff", size: 27},
-        {name: "android", iconText: "Samsung", color: "#efe81fff", size: 24},
-        {name: "laptop", iconText: "Laptop", color: "#6daedfff", size: 24},
-        {name: "tablet", iconText: "Tablet", color:"#c954eaff", size: 27},
-        {name: "mouse", iconText:"Mouse", color:"#e06380ff", size: 29},
-        {name: "keyboard-outline", iconText: "Keyboard", color: "#ac9de9ff", size: 27},
-    ]; 
+    componentDidMount() {
+        this.setState({
+            products: data,
+        });
+    }
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.sliderContainer}>
-                <Swiper
-                    autoplay={true}
-                    activeDotColor="#22D4FF"
-                    autoplayTimeout={5}
-                >
-                    <View style={styles.item}>
-                        <Image
-                            style={styles.imgItem} 
-                            source={require('../../assets/baner1.webp')} 
-                            resizeMode="cover"
-                        />
+    render() {
+         return (
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={styles.sliderContainer}>
+                        <Swiper
+                            autoplay={true}
+                            activeDotColor="#22D4FF"
+                            autoplayTimeout={5}
+                        >
+                            <View style={styles.item}>
+                                <Image
+                                    style={styles.imgItem} 
+                                    source={require('../../assets/baner1.webp')} 
+                                    resizeMode="cover"
+                                />
+                            </View>
+                            <View style={styles.item}>
+                                <Image
+                                    style={styles.imgItem} 
+                                    source={require('../../assets/baner2.webp')} 
+                                    resizeMode="cover"
+                                />
+                            </View>
+                            <View style={styles.item}>
+                                <Image
+                                    style={styles.imgItem} 
+                                    source={require('../../assets/baner3.webp')} 
+                                    resizeMode="cover"
+                                />
+                            </View>
+                        </Swiper>
+                        <View style={styles.iconWrapper}>
+                            <View style={styles.grid}>
+                                {icons.map((item, index) => (
+                                    <Icon
+                                        key={index}
+                                        name={item.name}
+                                        iconText={item.text}
+                                        color={item.color}
+                                        size={item.size}
+                                    />
+                                ))}
+                            </View>
+                        </View>
                     </View>
-                    <View style={styles.item}>
-                        <Image
-                            style={styles.imgItem} 
-                            source={require('../../assets/baner2.webp')} 
-                            resizeMode="cover"
+                    <View style={styles.productsContainer}>
+                        <Text style={styles.title}>Most Popular Products</Text>
+                        <FlatList
+                            data={this.state.products.popuarproducts}
+                            renderItem={({ item }) => (
+                                <View>
+                                    <Item item={item}/>
+                                </View>
+                            )}
                         />
-                    </View>
-                    <View style={styles.item}>
-                        <Image
-                            style={styles.imgItem} 
-                            source={require('../../assets/baner3.webp')} 
-                            resizeMode="cover"
-                        />
-                    </View>
-                </Swiper>
-                <View style={styles.iconWrapper}>
-                    <View style={styles.grid}>
-                        {icons.map((item, index) => (
-                            <Icon
-                                key={index}
-                                name={item.name}
-                                iconText={item.text}
-                                color={item.color}
-                                size={item.size}
-                            />
-                        ))}
+                        <TouchableOpacity style={styles.btn}>
+                            <Text style={styles.btnText}>View More</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
-            </View>
-                {/*<Swiper style={styles.swiper}
-                    autoplay={true}
-                    activeDotColor="#16d443ff"
-                    autoplayTimeout={3}
-                >
-                    <View style={styles.item1}>
-                        <Text style={styles.txt}>1</Text>
-                    </View>
-                    <View style={styles.item2}>
-                       <Text style={styles.txt}>2</Text>
-                    </View>
-                    <View style={styles.item3}>
-                        <Text style={styles.txt}>3</Text>
-                    </View>
-                </Swiper>
-            </View>
-            <View style={styles.iconsContainer}>
-                <Icon name="cellphone" iconText="Iphone" color="#f0a255ff" size={27}></Icon>
-                <Icon name="android" iconText="Samsung" color="#efe81fff" size={24}></Icon>
-                <Icon name="laptop" iconText="Laptop" color="#6daedfff" size={24}></Icon>
-            </View>
-            <View style={styles.iconsContainer}>
-                <Icon name="tablet" iconText="Tablet" color="#c954eaff" size={27}></Icon>
-                <Icon name="mouse" iconText="Mouse" color="#e06380ff" size={29}></Icon>
-                <Icon name="keyboard-outline" iconText="Keyboard" color="#ac9de9ff" size={27}></Icon>
-            </View>*/}
-        </View>
-    );
-};
+            </ScrollView>
+        );
+    }
+}
 
 const styles = StyleSheet.create({
     iconWrapper: {
@@ -156,6 +153,27 @@ const styles = StyleSheet.create({
         height: "100%",
         backgroundColor: "#b18923ff",
         justifyContent: "space-evenly",
+    },
+    productsContainer: {
+        marginHorizontal: 20,
+    },
+    title: {
+        marginTop: 35,
+        fontSize: 20,
+        fontWeight: "bold",
+        marginBottom: 16,
+    },
+    btn: {
+        backgroundColor: "#22D4FF",
+        height: 50,
+        borderRadius: 8,
+        justifyContent: "center",
+        marginBottom: 20,
+    },
+    btnText: {
+        color: "white",
+        textAlign: "center",
+        fontWeight: "bold",
     },
 });
 
