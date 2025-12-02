@@ -1,17 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity,} from 'react-native';
+
 
 const Item = ({ item }) => (
     <View style={styles.cardContainer}>
-        <View style={styles.img}>
-            <Image source={{ uri: `${item.image}` }} />
+        <View >
+            <Image style={styles.img} source={{ uri: `${item.image}` }} />
         </View>
         <View style={styles.textContainer}>
             <Text style={styles.name}>{item.name}</Text>
             <Text style={styles.category}>{item.category}</Text>
             <Text style={styles.desc}>{item.description}</Text>
             <Text style={styles.price}>{item.price}</Text>
-            <Text style={styles.prevPrice}>{item.previousPrice}</Text>
+            <Text style={styles.rating}>{item.rating}</Text>
+            <TouchableOpacity
+            onPress={() => navigation.navigate("Favourites", {item: item})}>
+                Add to favourites
+            </TouchableOpacity>
         </View>
     </View>
 );
@@ -57,10 +62,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 5,
         width: 45,
     },
-    prevPrice: {
+    rating: {
         fontStyle: "italic",
         marginTop: 5,
-        backgroundColor: "#d0620dff",
+        backgroundColor: "#4f9ceaff",
         color: "white",
         borderRadius: 100,
         paddingHorizontal: 5,
