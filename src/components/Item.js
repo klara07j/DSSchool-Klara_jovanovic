@@ -11,6 +11,7 @@ const Item = ({ item }) => (
             <Text style={styles.category}>{item.category}</Text>
             <Text style={styles.desc}>{item.description}</Text>
             <Text style={styles.price}>{item.price}</Text>
+            <Text style={styles.prevPrice}>{item.previousPrice}</Text>
         </View>
     </View>
 );
@@ -18,7 +19,7 @@ const Item = ({ item }) => (
 const styles = StyleSheet.create({
     cardContainer: {
         width: '100%',
-        height: 130,
+        height: 140,
         flexDirection: 'row',
         backgroundColor: "white",
         borderRadius: 8,
@@ -51,6 +52,15 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginTop: 5,
         backgroundColor: "#384053",
+        color: "white",
+        borderRadius: 100,
+        paddingHorizontal: 5,
+        width: 45,
+    },
+    prevPrice: {
+        fontStyle: "italic",
+        marginTop: 5,
+        backgroundColor: "#d0620dff",
         color: "white",
         borderRadius: 100,
         paddingHorizontal: 5,

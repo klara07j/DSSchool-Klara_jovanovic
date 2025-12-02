@@ -5,6 +5,7 @@ import About from "../screens/About";
 import Contact from "../screens/Contact";
 import Profile from "../screens/Profile";
 import Settings from "../screens/Settings";
+import Ios from "../screens/Ios";
 
 const Stack = createStackNavigator();
 
@@ -57,4 +58,12 @@ const SettingsStackNavigator = ({ navigation }) => {
     );
 };
 
-export {MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator};
+const IosStackNavigator = () => {
+    return(
+        <Stack.Navigator>
+            <Stack.Screen name="iOS" component={Ios} />
+        </Stack.Navigator>
+    );
+};
+
+export {MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator, IosStackNavigator};
