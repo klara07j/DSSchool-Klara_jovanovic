@@ -5,7 +5,7 @@ import { Text, View, StyleSheet } from 'react-native';
 const Icon = ( props ) => (
     <View style={styles.iconContainer}>
         <View style={styles.iconWrapper}>
-            <MaterialCommunityIcons name={props.name} size={props.size} color={props.color} />
+            <MaterialCommunityIcons name={props.name} size={20} color={"#e724bdff"} />
         </View>
         <Text style={styles.iconText}>{props.iconText}</Text>
     </View>

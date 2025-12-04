@@ -6,6 +6,7 @@ import Contact from "../screens/Contact";
 import Profile from "../screens/Profile";
 import Settings from "../screens/Settings";
 import Ios from "../screens/Ios";
+import Andriod from "../screens/Android";
 
 const Stack = createStackNavigator();
 
@@ -66,4 +67,12 @@ const IosStackNavigator = () => {
     );
 };
 
-export {MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator, IosStackNavigator};
+const AndriodStackNavigator = () => {
+    return(
+        <Stack.Navigator>
+            <Stack.Screen name="Android" component={Andriod} />
+        </Stack.Navigator>
+    );
+};
+
+export {MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator, IosStackNavigator, AndriodStackNavigator};

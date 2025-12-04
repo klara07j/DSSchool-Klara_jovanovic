@@ -11,8 +11,8 @@ const Item = ({ item }) => (
             <Text style={styles.name}>{item.name}</Text>
             <Text style={styles.category}>{item.category}</Text>
             <Text style={styles.desc}>{item.description}</Text>
-            <Text style={styles.price}>{item.price}</Text>
-            <Text style={styles.rating}>{item.rating}</Text>
+            <Text style={styles.price}>Price: {item.price}</Text>
+            <Text style={styles.stock}>{item.stock}</Text>
             <TouchableOpacity
             onPress={() => navigation.navigate("Favourites", {item: item})}>
                 Add to favourites
@@ -56,20 +56,21 @@ const styles = StyleSheet.create({
     price: {
         fontWeight: "bold",
         marginTop: 5,
-        backgroundColor: "#384053",
+        backgroundColor: "#bfa73eff",
         color: "white",
         borderRadius: 100,
         paddingHorizontal: 5,
-        width: 45,
+        width: 90,
     },
-    rating: {
-        fontStyle: "italic",
+    stock: {
+        fontStyle: "bold",
         marginTop: 5,
         backgroundColor: "#4f9ceaff",
         color: "white",
         borderRadius: 100,
         paddingHorizontal: 5,
-        width: 45,
+        width: 80,
+        textAlign: 'center',
     },
 });
 
