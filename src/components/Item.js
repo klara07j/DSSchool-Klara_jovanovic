@@ -1,30 +1,36 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity,} from 'react-native';
 
 
-const Item = ({ item }) => (
-    <View style={styles.cardContainer}>
-        <View >
-            <Image style={styles.img} source={{ uri: `${item.image}` }} />
-        </View>
-        <View style={styles.textContainer}>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.category}>{item.category}</Text>
-            <Text style={styles.desc}>{item.description}</Text>
-            <Text style={styles.price}>Price: {item.price}</Text>
-            <Text style={styles.stock}>{item.stock}</Text>
-            <TouchableOpacity
-            onPress={() => navigation.navigate("Favourites", {item: item})}>
-                Add to favourites
-            </TouchableOpacity>
-        </View>
-    </View>
-);
+const Item = ({ item }) => {
+    const navigation = useNavigation();
+    return (
+        <TouchableOpacity onPress={() => navigation.navigate("Single", {item})}>
+            <View style={styles.cardContainer}>
+                <View>
+                    <Image style={styles.img} source={{ uri: `${item.image}` }} />
+                </View>
+                <View style={styles.textContainer}>
+                    <Text style={styles.name}>{item.name}</Text>
+                    <Text style={styles.category}>{item.category}</Text>
+                    <Text style={styles.desc}>{item.description}</Text>
+                    <Text style={styles.price}>Price: {item.price}</Text>
+                    <Text style={styles.stock}>{item.stock}</Text>
+                    <TouchableOpacity
+                    onPress={() => navigation.navigate("Favourites", {item: item})}>
+                        Add to favourites
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </TouchableOpacity>
+    );
+}
 
 const styles = StyleSheet.create({
     cardContainer: {
         width: '100%',
-        height: 140,
+        height: 180,
         flexDirection: 'row',
         backgroundColor: "white",
         borderRadius: 8,

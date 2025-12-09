@@ -36,7 +36,7 @@
       "price": "$750",
       "rating": "30%",
       "image": "https://images.unsplash.com/photo-1530319067432-f2a729c03db5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation."
+      "description": "The iPhone X is Apple’s 11th-generation smartphone, introduced in November 2017, notable for its edge-to-edge OLED display, Face ID facial recognition, and the removal of the iconic home button."
     },
     {
       "id": 2,
@@ -45,7 +45,7 @@
       "price": "$999",
       "rating": "70%",
       "image": "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation."
+      "description": "The iPhone 12, released in October 2020, was Apple’s 14th-generation smartphone, introducing 5G connectivity, a tougher Ceramic Shield front, and the powerful A14 Bionic chip."
     },
     {
       "id": 3,
@@ -54,7 +54,7 @@
       "price": "$999",
       "rating": "60%",
       "image": "https://images.unsplash.com/photo-1570963904764-fff966562bbd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation."
+      "description": "The iPhone 12 Pro, released in October 2020, was Apple’s premium model in the iPhone 12 lineup, offering advanced camera systems, stainless steel design, and LiDAR technology for enhanced photography and AR."
     }
   ],
 
@@ -66,7 +66,7 @@
       "price": "$990",
       "stock": "In stock",
       "image": "https://images.unsplash.com/photo-1575571536958-38aa1227786a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation."
+      "description": "Xiaomi is a Chinese multinational technology company founded in 2010, best known for its smartphones, smart home devices, and IoT ecosystem."
     },
     {
       "id": 2,
@@ -75,7 +75,7 @@
       "price": "$990",
       "stock": "Out of stock",
       "image": "https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation."
+      "description": "The Samsung Galaxy S21 series, launched in January 2021, marked Samsung’s flagship lineup with powerful performance, sleek design, and advanced cameras."
     }
   ]
 }

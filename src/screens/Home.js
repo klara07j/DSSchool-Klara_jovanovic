@@ -61,9 +61,19 @@ class Home extends React.Component {
             </Swiper>
           </View>
           <View style={styles.iconsContainer}>
-            <Icon name="cellphone" iconText="Iphone"></Icon>
-            <Icon name="android" iconText="Samsung"></Icon>
-            <Icon name="laptop" iconText="Laptop"></Icon>
+            <TouchableOpacity
+              style={styles.icon}
+              onPress={() => this.props.navigation.navigate("Ios")}
+            >
+              <Icon style={styles.icons} name="cellphone" iconText="Iphone"></Icon>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.icon}
+              onPress={() => this.props.navigation.navigate("Android")}
+            > 
+              <Icon style={styles.icons} name="android" iconText="Samsung"></Icon>
+            </TouchableOpacity>
+            <Icon  name="laptop" iconText="Laptop"></Icon>
           </View>
           <View style={styles.iconsContainer}>
             <Icon name="tablet" iconText="Tablet"></Icon>
@@ -93,11 +103,18 @@ class Home extends React.Component {
 
 const styles = StyleSheet.create({
   iconsContainer: {
-    width: "90%",
+    width: "100%",
     alignSelf: "center",
     marginTop: 30,
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+
+  icon: {
+     width: '33%',
+      height: 60,
+      alignItems: "center",
+      marginBottom: 15,
   },
 
   container: {

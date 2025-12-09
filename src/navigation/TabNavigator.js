@@ -1,6 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator, IosStackNavigator, AndriodStackNavigator} from "./StackNavigator";
+import { MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator} from "./StackNavigator";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Ios from "../screens/Ios";
+import Andriod from "../screens/Android";
 
 const Tab = createBottomTabNavigator();
 
@@ -64,8 +66,8 @@ const BottomTabNavigator = () => {
                 )
             }}
             />
-            <Tab.Screen name="iOS"
-            component={IosStackNavigator} 
+            <Tab.Screen name="Ios"
+            component={Ios} 
             options={{
                 tabBarLabel: "iOS",
                 tabBarIcon: ({color}) => (
@@ -74,7 +76,7 @@ const BottomTabNavigator = () => {
             }}
             />
             <Tab.Screen name="android"
-            component={AndriodStackNavigator} 
+            component={Andriod} 
             options={{
                 tabBarLabel: "Android",
                 tabBarIcon: ({color}) => (

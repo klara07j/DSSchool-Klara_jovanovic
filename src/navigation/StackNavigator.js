@@ -7,6 +7,7 @@ import Profile from "../screens/Profile";
 import Settings from "../screens/Settings";
 import Ios from "../screens/Ios";
 import Andriod from "../screens/Android";
+import Single from "../screens/Single";
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,9 @@ const MainStackNavigator = ({ navigation }) => {
     return(
         <Stack.Navigator screenOptions={screenOptionStyle}>
             <Stack.Screen name="Home" component={Home} />
-
+            <Stack.Screen name="Android" component={Andriod} />
+            <Stack.Screen name="Ios" component={Ios} />
+            <Stack.Screen name="Single" component={Single} />
         </Stack.Navigator>
     );
 };
@@ -59,20 +62,4 @@ const SettingsStackNavigator = ({ navigation }) => {
     );
 };
 
-const IosStackNavigator = () => {
-    return(
-        <Stack.Navigator>
-            <Stack.Screen name="iOS" component={Ios} />
-        </Stack.Navigator>
-    );
-};
-
-const AndriodStackNavigator = () => {
-    return(
-        <Stack.Navigator>
-            <Stack.Screen name="Android" component={Andriod} />
-        </Stack.Navigator>
-    );
-};
-
-export {MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator, IosStackNavigator, AndriodStackNavigator};
+export {MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator};
