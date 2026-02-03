@@ -17,13 +17,13 @@ class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      products: [],
+      place: [],
     };
   }
 
   componentDidMount() {
     this.setState({
-      products: data,
+      place: data,
     });
   }
 
@@ -31,30 +31,33 @@ class Home extends React.Component {
     return (
       <ScrollView>
         <View style={styles.container}>
+          <View style={styles.uvod}>
+            <Text style={styles.txt}>"Travel far, travel smart."</Text>
+          </View>
           <View style={styles.sliderContainer}>
             <Swiper
               autoplay={true}
-              activeDotColor="rgba(34, 212, 255, 1)"
+              activeDotColor="rgb(5, 40, 49)"
               autoplayTimeout={5}
             >
               <View style={styles.item}>
                 <Image
                   style={styles.imgItem}
-                  source={require("../../assets/baner1.webp")}
+                  source={require("../../assets/prva-slika.webp")}
                   resizeMode="cover"
                 />
               </View>
               <View style={styles.item}>
                 <Image
                   style={styles.imgItem}
-                  source={require("../../assets/baner2.webp")}
+                  source={require("../../assets/druga-slika.webp")}
                   resizeMode="cover"
                 />
               </View>
               <View style={styles.item}>
                 <Image
                   style={styles.imgItem}
-                  source={require("../../assets/baner3.webp")}
+                  source={require("../../assets/treca-slika.webp")}
                   resizeMode="cover"
                 />
               </View>
@@ -63,37 +66,31 @@ class Home extends React.Component {
           <View style={styles.iconsContainer}>
             <TouchableOpacity
               style={styles.icon}
-              onPress={() => this.props.navigation.navigate("Ios")}
-            >
-              <Icon style={styles.icons} name="cellphone" iconText="Iphone"></Icon>
+              onPress={() => this.props.navigation.navigate("Italy")}>
+              <Icon style={styles.icon} name="i-cursor" iconText="Italy"></Icon>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.icon}
-              onPress={() => this.props.navigation.navigate("Android")}
-            > 
-              <Icon style={styles.icons} name="android" iconText="Samsung"></Icon>
+              onPress={() => this.props.navigation.navigate("France")}> 
+              <Icon style={styles.icon} name="facebook" iconText="France"></Icon>
             </TouchableOpacity>
-            <Icon  name="laptop" iconText="Laptop"></Icon>
-          </View>
-          <View style={styles.iconsContainer}>
-            <Icon name="tablet" iconText="Tablet"></Icon>
-            <Icon name="mouse" iconText="Mouse"></Icon>
-            <Icon name="keyboard-outline" iconText="Keyboard"></Icon>
+            <TouchableOpacity
+              style={styles.icon}
+              onPress={() => this.props.navigation.navigate("USA")}> 
+              <Icon style={styles.icon} name="usd" iconText="USA"></Icon>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.productsContainer}>
-            <Text style={styles.title}>Most Popular Products</Text>
+            <Text style={styles.title}>Popular Destinations</Text>
             <FlatList
-              data={this.state.products.popularproducts}
+              data={this.state.place.popular}
               renderItem={({ item }) => (
                 <View>
                   <Item item={item} />
                 </View>
               )}
             />
-            <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btnText}>View More</Text>
-            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -109,7 +106,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-
+uvod: {
+  alignSelf: "center",
+  marginTop: 20,
+  marginBottom: 10
+},
+txt: {
+  fontSize: 20,
+  fontWeight: "bold",
+  color: "#e923c5"
+},
   icon: {
      width: '33%',
       height: 60,
@@ -148,24 +154,11 @@ const styles = StyleSheet.create({
 
   title: {
     marginTop: 35,
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 16,
-  },
-
-  btn: {
-    backgroundColor: "#22D4FF",
-    height: 50,
-    borderRadius: 8,
-    justifyContent: "center",
-    marginBottom: 20,
-    marginTop: 20,
-  },
-
-  btnText: {
-    color: "white",
-    textAlign: "center",
-    fontWeight: "bold",
+    fontSize: 30,
+    fontWeight: "italic",
+    marginBottom: 22,
+    marginTop: 40,
+    alignSelf: 'center',
   },
 });
 

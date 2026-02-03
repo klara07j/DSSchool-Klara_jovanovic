@@ -4,52 +4,48 @@ import data from '../data/products.json';
 import { ScrollView } from 'react-native-gesture-handler';
 import Item from '../components/Item';
 
-class Andriod extends Component {
+class France extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        products: [],
-        showInStockOnly: false,
+        places: [],
+        visibleCount: 2,
     };
   }
 
   componentDidMount() {
     this.setState({
-        products: data.android,
+        places: data,
     });
   }
 
-  getFilteredProducts = () => {
-    const {products,showInStockOnly} = this.state;
-    if(!showInStockOnly){
-      return products;
-    }
-    return products.filter(item => item.stock === "In stock");
+  handleViewMore = () => {
+    const franceLenght = this.state.places.france.length;
+    this.setState(prevState => ({
+      visibleCount: Math.min(prevState.visibleCount + 2, franceLenght),
+    }));
   };
 
   render() {
-    const filteredProducts = this.getFilteredProducts();
+    const{ places, visibleCount} = this.state;
+    if (!places.france) return null;
     return (
       <ScrollView>
         <View style={styles.container}>
-            <Text style={styles.desc}>Android Products</Text>
-            <View style={styles.filterContainer}>
-              <Text style={styles.filterText}>Prikaži samo na zalihi:</Text>
-              <Switch
-                onValueChange={(value) => this.setState({showInStockOnly: value})}
-                value={this.state.showInStockOnly}/>
-            </View>
+            <Text style={styles.desc}>FRANCE</Text>
             <FlatList
-              data={filteredProducts}
+              data={places.france.slice(0, visibleCount)}
               renderItem={({ item }) => (
                 <View>
                   <Item item={item} />
                 </View>
               )}
             />
-            <TouchableOpacity style={styles.btn}>
+            {visibleCount < places.france.length && (
+            <TouchableOpacity style={styles.btn} onPress={this.handleViewMore}>
               <Text style={styles.btnText}>View More</Text>
             </TouchableOpacity>
+          )}
         </View>
       </ScrollView>
     );
@@ -63,7 +59,12 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     desc: {
-        marginBottom: 20,
+      marginBottom: 20,
+      alignSelf: "center",
+      fontWeight: "bold",
+      fontStyle: "italic",
+      fontSize: 20,
+      color: "#141d9d"
     },
     filterContainer: {
       flexDirection: 'row',
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
       fontSize: 16,
     },
     btn: {
-    backgroundColor: "#22D4FF",
+    backgroundColor: "#f119cd",
     height: 50,
     borderRadius: 8,
     justifyContent: "center",
@@ -94,4 +95,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Andriod;
+export default France;

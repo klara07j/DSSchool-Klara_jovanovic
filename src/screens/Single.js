@@ -1,28 +1,33 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Single = ({ navigation, 
     route: {params: {item},},}) => (
-    <View style={styles.container}>
-        <View style={styles.imgContainer}>
-            <Image style={styles.img} source = {{uri: `${item.image}` }}/>
-        </View>
-        <View style={styles.cardHeader}>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.name}>{item.price}</Text>
-        </View>
-        <Text style={styles.desc}>{item.description}</Text>
-        <TouchableOpacity style={styles.btn} onPress={() => navigation.goBack()}>
-            <Text style={styles.btnText}>GO BACK</Text>
-        </TouchableOpacity>
-    </View>
+        <ScrollView>
+            <View style={styles.container}>
+                <Text style={styles.name}>{item.city}</Text>
+                <View style={styles.imgContainer}>
+                    <Image style={styles.img} source = {{uri: `${item.image}` }}/>
+                </View>
+                <View style={styles.cardHeader}>
+                
+                    <Text style={styles.country}>{item.country}</Text>
+                </View>
+                <Text style={styles.desc}>{item.description}</Text>
+                <Text>{item.moze}</Text>
+                <TouchableOpacity style={styles.btn} onPress={() => navigation.goBack()}>
+                    <Text style={styles.btnText}>NATRAG</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
 );
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        marginTop: 40,
+        marginTop: 30,
     },
     imgContainer: {
         width: "90%",
@@ -36,24 +41,28 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
     },
     cardHeader: {
-        marginTop: 15,
+        marginTop: 12,
         width: '80%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
     },
     name: {
         fontSize: 25,
         fontWeight: "bold",
+        marginBottom: 20,
         textTransform: "uppercase",
         color: "#070639",
     },
+    country: {
+        fontSize: 25,
+        fontWeight: "bold",
+        marginBottom: 10
+    },
     desc: {
         width: "90%",
-        marginTop: 35,
+        marginTop: 15,
         textAlign: "center",
     },
     btn: {
-        backgroundColor: "#22D4FF",
+        backgroundColor: "#ea26f1",
         height: 50,
         borderRadius: 8,
         justifyContent: "center",

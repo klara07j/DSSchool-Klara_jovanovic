@@ -1,81 +1,130 @@
 {
-  "popularproducts": [
+  "popular": [
     {
       "id": 1,
-      "name": "iPad 8",
-      "category": "Tablet",
-      "price": "$880",
-      "previousPrice": "$920",
-      "image": "https://images.unsplash.com/photo-1525101238777-8878781fc06d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80",
-      "description": "Lorem Ipsum dolor sit amet, ut labore et dolore magna aliqua."
+      "city": "Paris",
+      "country": "France",
+      "description": "Jedan od najromantičnijih gradova na svijetu. Poznat je po Eiffelovom tornju, muzeju Louvre, umjetnosti, modi i šetnjama uz rijeku Seinu.",
+      "price": "300$",
+      "image": "https://wallpapers.com/images/featured/paris-pictures-va47y74q22cr6rai.jpg"
     },
     {
       "id": 2,
-      "name": "iPhone X",
-      "category": "iOS",
-      "price": "$750",
-      "previousPrice": "$900",
-      "image": "https://images.unsplash.com/photo-1530319067432-f2a729c03db5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation."
+      "city": "Rome",
+      "country": "Italy",
+      "description": "“Vječni grad” s bogatom poviješću starom više od 2.000 godina. Poznat je po Koloseumu, Rimskom forumu i fontani Trevi.",
+      "price": "200$",
+      "image": "https://th.bing.com/th/id/R.530f9742b3f188c1640041a524b1fdcc?rik=IYc%2fsTbu0kg0Uw&pid=ImgRaw&r=0"
     },
     {
       "id": 3,
-      "name": "Samsung S21",
-      "category": "Android",
-      "price": "$990",
-      "previousPrice": "$1300",
-      "image": "https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation."
+      "city": "New York",
+      "country": "USA",
+      "description": "Najveći grad u SAD-u i svjetska metropola kulture, financija i zabave. Poznat je po Times Squareu, Central Parku i Kipu slobode.",
+      "price": "500$",
+      "image": "https://th.bing.com/th/id/OIP.xxMNXeoNaHvUXmKC_kvJywHaE7?w=233&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
     }
   ],
-  "ios": [
+  "france": [
     {
       "id": 1,
-      "name": "iPhone X",
-      "category": "iOS",
-      "price": "$750",
-      "rating": "30%",
-      "image": "https://images.unsplash.com/photo-1530319067432-f2a729c03db5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80",
-      "description": "The iPhone X is Apple’s 11th-generation smartphone, introduced in November 2017, notable for its edge-to-edge OLED display, Face ID facial recognition, and the removal of the iconic home button."
+      "city": "Nice",
+      "country": "France",
+      "description": "Prekrasan obalni grad na Azurnoj obali, poznat po šetnici Promenade des Anglais, plavom moru i mediteranskoj klimi.",
+      "price": "200$",
+      "image": "https://blog.itineraryo.com/wp-content/uploads/2023/06/view-villefranche-sur-mer-with-flowers-foreground-cote-d-azur-french-riviera-france-1024x683.jpg"
     },
     {
       "id": 2,
-      "name": "iPhone 12",
-      "category": "iOS",
-      "price": "$999",
-      "rating": "70%",
-      "image": "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-      "description": "The iPhone 12, released in October 2020, was Apple’s 14th-generation smartphone, introducing 5G connectivity, a tougher Ceramic Shield front, and the powerful A14 Bionic chip."
+      "city": "Strasbourg",
+      "country": "France",
+      "description": "Bajkovit grad na granici s Njemačkom, poznat po staroj gradskoj jezgri Petite France, kanalima i jednoj od najljepših katedrala u Europi.",
+      "price": "250$",
+      "image": "https://th.bing.com/th/id/OIP.tONe2xKxOxdS86Rl7gYrVQHaE7?w=244&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+    },
+   {
+      "id": 3,
+      "city": "Lyon",
+      "country": "France",
+      "description": "Lyon je kulinarska prijestolnica Francuske, poznata po bogatoj gastronomskoj tradiciji i specijalitetima poput quenelle i cervelle de canut.",
+      "price": "280$",
+      "image": "https://www.tripsavvy.com/thmb/BopODXSQwFc8D9YuiF5eSquyKM4=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/lyon-city-hall-on-place-des-terreaux-528524992-2bf417b332114762b022cd0e0a61b28f.jpg"
+    },
+    {
+      "id": 4,
+      "city": "Bordeaux",
+      "country": "France",
+      "description": "Bordeaux je poznat po vinima svjetske klase i elegantnoj arhitekturi u stilu 18. stoljeća. Grad nudi predivne šetnje uz rijeku Garonne, posjete vinskim podrumima i degustacije lokalnih specijaliteta.",
+      "price": "300$",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.8Ljrpf3SXMi4KeYhvyzimAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+    }
+  ],
+  "italy": [
+    {
+      "id": 1,
+      "city": "Florence",
+      "country": "Italy",
+      "description": "Kolijevka renesanse, poznata po umjetnosti, katedrali Duomo i galeriji Uffizi. Grad je pun povijesnih mostova, trgova i vrhunske talijanske kuhinje.",
+      "price": "200$",
+      "image": "data:image/webp;base64,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"
+    },
+    {
+      "id": 2,
+      "city": "Venice",
+      "country": "Italy",
+      "description": "Jedinstveni grad na vodi s kanalima, gondolama i povijesnim palačama. Poznata po Trgu svetog Marka, mostu Rialto i romantičnoj atmosferi.",
+      "price": "350$",
+      "image": "https://th.bing.com/th/id/OIP.BYGioapoYVWSlGDcwD-rJQHaE8?w=331&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
     },
     {
       "id": 3,
-      "name": "iPhone 12 Pro",
-      "category": "iOS",
-      "price": "$999",
-      "rating": "60%",
-      "image": "https://images.unsplash.com/photo-1570963904764-fff966562bbd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-      "description": "The iPhone 12 Pro, released in October 2020, was Apple’s premium model in the iPhone 12 lineup, offering advanced camera systems, stainless steel design, and LiDAR technology for enhanced photography and AR."
+      "city": "Napuli",
+      "country": "Italy",
+      "description": "Poznat po pizzi, Napuljskom zaljevu i blizini arheoloških lokaliteta poput Pompeja.",
+      "price": "200$",
+      "image": "https://th.bing.com/th/id/OIP.DQSFcvp_Rrdr3VXp-DMLBAHaE8?w=273&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+    },
+    {
+      "id": 4,
+      "city": "Bologna",
+      "country": "Italy",
+      "description": "Poznata po gastronomiji, srednjovjekovnoj arhitekturi i dugim arkadama koje krase stari grad.",
+      "price": "180$",
+      "image": "https://th.bing.com/th/id/OIP.1CmajbYzI_V9bqaV-0VGYwHaE8?w=260&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
     }
   ],
-
-  "android": [
+  "usa": [
     {
       "id": 1,
-      "name": "Xiaomi",
-      "category": "Android",
-      "price": "$990",
-      "stock": "In stock",
-      "image": "https://images.unsplash.com/photo-1575571536958-38aa1227786a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "description": "Xiaomi is a Chinese multinational technology company founded in 2010, best known for its smartphones, smart home devices, and IoT ecosystem."
+      "city": "Los Angeles",
+      "country": "USA",
+      "description": "Grad filma i plaža, poznat po Hollywoodu, Santa Monici, Beverly Hillsu i sunčanoj klimi tijekom cijele godine.",
+      "price": "400$",
+      "image": "https://th.bing.com/th/id/R.2ff0c9feb077c6a3a213132686c46447?rik=T4%2b1GE%2fFcIeQlQ&pid=ImgRaw&r=0"
     },
     {
       "id": 2,
-      "name": "Samsung S21",
-      "category": "Android",
-      "price": "$990",
-      "stock": "Out of stock",
-      "image": "https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-      "description": "The Samsung Galaxy S21 series, launched in January 2021, marked Samsung’s flagship lineup with powerful performance, sleek design, and advanced cameras."
+      "city": "Las Vegas",
+      "country": "USA",
+      "description": "Grad zabave i noćnog života, poznat po svjetski poznatom Stripu, luksuznim hotelima, kockarnicama i spektakularnim show programima.",
+      "price": "800$",
+      "image": "https://th.bing.com/th/id/OIP.PQ_v7pup5vo6uY5LaffuFwHaEK?w=301&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+    },
+    {
+      "id": 3,
+      "city": "New Orleans",
+      "country": "USA",
+      "description": "New Orleans je poznat po jedinstvenoj mješavini kultura, uključujući francusku, španjolsku i kreolsku. Grad je svjetski poznat po jazz glazbi i Mardi Gras karnevalu. ",
+      "price": "400$",
+      "image": "https://th.bing.com/th/id/OIP.0F0rZ6xoehqttXrmstCUygHaFS?w=214&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+    },
+    {
+      "id": 4,
+      "city": "Seattle",
+      "country": "USA",
+      "description": "Seattle je poznat po modernoj i inovativnoj atmosferi. Grad krase ikonična Space Needle i Pike Place Market, gdje možete uživati u svježim morskim plodovima i lokalnim proizvodima.",
+      "price": "550$",
+      "image": "https://tse3.mm.bing.net/th/id/OIP.WubUKOW1MLmYEOU-DbnlhAHaEo?rs=1&pid=ImgDetMain&o=7&rm=3"
     }
   ]
 }

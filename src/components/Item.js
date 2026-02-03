@@ -12,15 +12,10 @@ const Item = ({ item }) => {
                     <Image style={styles.img} source={{ uri: `${item.image}` }} />
                 </View>
                 <View style={styles.textContainer}>
-                    <Text style={styles.name}>{item.name}</Text>
-                    <Text style={styles.category}>{item.category}</Text>
+                    <Text style={styles.city}>{item.city}</Text>
+                    <Text style={styles.country}>{item.country}</Text>
                     <Text style={styles.desc}>{item.description}</Text>
-                    <Text style={styles.price}>Price: {item.price}</Text>
-                    <Text style={styles.stock}>{item.stock}</Text>
-                    <TouchableOpacity
-                    onPress={() => navigation.navigate("Favourites", {item: item})}>
-                        Add to favourites
-                    </TouchableOpacity>
+                    <Text style={styles.price}>Cijena: {item.price}</Text>
                 </View>
             </View>
         </TouchableOpacity>
@@ -48,13 +43,9 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         width: '70%',
     },
-    name: {
+    city: {
         fontWeight: "bold",
         fontSize: 16,
-    },
-    category: {
-        fontSize: 12,
-        color: '#22D4FF',
     },
     desc: {
         fontStyle: "italic",
@@ -62,22 +53,17 @@ const styles = StyleSheet.create({
     price: {
         fontWeight: "bold",
         marginTop: 5,
-        backgroundColor: "#bfa73eff",
+        backgroundColor: "rgb(87, 15, 62)",
         color: "white",
         borderRadius: 100,
         paddingHorizontal: 5,
         width: 90,
+        height: 25
     },
-    stock: {
-        fontStyle: "bold",
-        marginTop: 5,
-        backgroundColor: "#4f9ceaff",
-        color: "white",
-        borderRadius: 100,
-        paddingHorizontal: 5,
-        width: 80,
-        textAlign: 'center',
-    },
+    country:{
+        marginBottom: 8,
+        marginTop: 6,
+    }
 });
 
 export default Item;

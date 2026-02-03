@@ -1,19 +1,16 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/Home";
-import About from "../screens/About";
-import Contact from "../screens/Contact";
-import Profile from "../screens/Profile";
-import Settings from "../screens/Settings";
-import Ios from "../screens/Ios";
-import Andriod from "../screens/Android";
+import USA from "../screens/USA";
+import Italy from "../screens/Italy";
+import France from "../screens/France";
 import Single from "../screens/Single";
 
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
     headerStyle: {
-        backgroundColor: "#384053",
+        backgroundColor: "#690d6b",
     },
     headerTintColor: "white",
 };
@@ -22,44 +19,12 @@ const MainStackNavigator = ({ navigation }) => {
     return(
         <Stack.Navigator screenOptions={screenOptionStyle}>
             <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Android" component={Andriod} />
-            <Stack.Screen name="Ios" component={Ios} />
+            <Stack.Screen name="France" component={France} />
+            <Stack.Screen name="Italy" component={Italy} />
+            <Stack.Screen name="USA" component={USA} />
             <Stack.Screen name="Single" component={Single} />
         </Stack.Navigator>
     );
 };
 
-const AboutStackNavigator = ({ navigation }) => {
-    return(
-        <Stack.Navigator screenOptions={screenOptionStyle}>
-            <Stack.Screen name="About" component={About} />
-
-        </Stack.Navigator>
-    );
-};
-
-const ProfileStackNavigator = ({ navigation }) => {
-    return(
-        <Stack.Navigator screenOptions={screenOptionStyle}>
-            <Stack.Screen name="Profile" component={Profile} />
-        </Stack.Navigator>
-    );
-};
-
-const ContactStackNavigator = ({ navigation }) => {
-    return(
-        <Stack.Navigator screenOptions={screenOptionStyle}>
-            <Stack.Screen name="Contact" component={Contact} />
-        </Stack.Navigator>
-    );
-};
-
-const SettingsStackNavigator = ({ navigation }) => {
-    return(
-        <Stack.Navigator screenOptions={screenOptionStyle}>
-            <Stack.Screen name="Settings" component={Settings} />
-        </Stack.Navigator>
-    );
-};
-
-export {MainStackNavigator, AboutStackNavigator, ProfileStackNavigator, ContactStackNavigator, SettingsStackNavigator};
+export {MainStackNavigator};

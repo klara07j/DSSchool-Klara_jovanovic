@@ -4,36 +4,48 @@ import data from '../data/products.json';
 import { ScrollView } from 'react-native-gesture-handler';
 import Item from '../components/Item';
 
-class Ios extends Component {
+class USA extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        products: [],
+        places: [],
+        visibleCount: 2,
     };
   }
 
   componentDidMount() {
     this.setState({
-        products: data,
+        places: data,
     });
   }
 
+  handleViewMore = () => {
+    const usaLenght = this.state.places.usa.length;
+    this.setState(prevState => ({
+      visibleCount: Math.min(prevState.visibleCount + 2, usaLenght),
+    }));
+  };
+
   render() {
+    const{ places, visibleCount} = this.state;
+    if (!places.usa) return null;
     return (
       <ScrollView>
         <View style={styles.container}>
-            <Text style={styles.desc}>IOS Products</Text>
+            <Text style={styles.desc}>USA</Text>
             <FlatList
-              data={this.state.products.ios}
+              data={places.usa.slice(0, visibleCount)}
               renderItem={({ item }) => (
                 <View>
                   <Item item={item} />
                 </View>
               )}
             />
-            <TouchableOpacity style={styles.btn}>
+            {visibleCount < places.usa.length && (
+            <TouchableOpacity style={styles.btn} onPress={this.handleViewMore}>
               <Text style={styles.btnText}>View More</Text>
             </TouchableOpacity>
+          )}
         </View>
       </ScrollView>
     );
@@ -47,10 +59,15 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     desc: {
-        marginBottom: 20,
+      marginBottom: 20,
+      alignSelf: "center",
+      fontWeight: "bold",
+      fontStyle: "italic",
+      fontSize: 20,
+      color: "#e52914"
     },
     btn: {
-    backgroundColor: "#22D4FF",
+    backgroundColor: "#f119cd",
     height: 50,
     borderRadius: 8,
     justifyContent: "center",
@@ -64,4 +81,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Ios;
+export default USA;
