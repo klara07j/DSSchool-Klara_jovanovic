@@ -80,7 +80,11 @@ class Home extends React.Component {
               <Icon style={styles.icon} name="usd" iconText="USA"></Icon>
             </TouchableOpacity>
           </View>
-
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => this.props.navigation.navigate("Checklist")}>
+            <Text style={styles.btnText}>Travel Checklist</Text>
+          </TouchableOpacity>
           <View style={styles.productsContainer}>
             <Text style={styles.title}>Popular Destinations</Text>
             <FlatList
@@ -160,8 +164,20 @@ txt: {
     marginTop: 40,
     alignSelf: 'center',
   },
+   btn: {
+    backgroundColor: "#e18dd3",
+    height: 50,
+    borderRadius: 8,
+    justifyContent: "center",
+    marginBottom: 5,
+    marginTop: 50,
+    width: 300,
+    alignSelf: 'center',
+    },
+  btnText:{
+    alignSelf: 'center',
+    fontSize: 20
+  }
 });
 
 export default Home; 
-
-//https://691ccee63aaeed735c9232a0.mockapi.io/api/images/images
